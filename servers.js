@@ -39,17 +39,17 @@ function updateServerTable() {
 
     appendTd(newTr, curServer.serverName);
     appendTd(newTr, '$' + tipAverage.toFixed(2));
+    let deleteTd = appendDeleteBtn(newTr);
+
+    deleteTd.addEventListener('click', (e) => {
+      let parentRow =  e.target.closest('tr');
+      delete allServers[parentRow.id];
+      parentRow.remove();
+      updateServerTable();
+    })
+
 
     serverTbody.append(newTr);
   }
 }
 
-// Removes All server from dictionary and from the doom
-function removeAllServers(){
-  allServers = {};
-  serverId = 0;
-  let servers = serverTbody.querySelectorAll('tr');
-  servers.forEach(server => {
-    server.remove();
-  });
-}

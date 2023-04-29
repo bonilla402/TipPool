@@ -47,6 +47,7 @@ describe("Servers test (with setup and tear-down)", function() {
 
       expect(tdList[0].innerText).toEqual(names[index]);
       expect(tdList[1].innerText).toEqual('$25.00');
+      expect(tdList[2].innerText).toEqual('X');
     }
   });
 

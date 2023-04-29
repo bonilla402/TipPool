@@ -39,6 +39,16 @@ describe("Helpers Test", function() {
     expect(td.innerText).toEqual(value);
   });
 
+
+  it('Testing appendDeleteBtn()', function () {
+
+    let newTr = document.createElement('tr');
+    appendDeleteBtn(newTr)
+    let td = newTr.querySelector('td');
+    expect(td.innerText).toEqual('X');
+  });
+
+
   afterEach(function() {
     allPayments = {};
     paymentId = 0;
